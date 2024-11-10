@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="/assets/WhatsApp Image 2024-11-10 at 06.10.55_3ad7db2c.jpg" type="image/x-icon">
+<title>Happy Birthday Qyara</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <!-- Foto Ulang Tahun -->
+    <img src="/assets/WhatsApp Image 2024-11-10 at 06.10.55_3ad7db2c.jpg" alt="Birthday Celebration" class="photo">
+
+    <!-- Pesan Ulang Tahun -->
+    <div class="message">
+        <p>Selamat Ulang Tahun Qyara! Semoga tahun ini penuh dengan keceriaan, tawa, dan banyak petualangan seru! Semoga kamu selalu sehat, bahagia, dan diberi keberuntungan. Nikmati hari spesialmu dengan orang-orang tercinta!</p>
+    </div>
+
+    <!-- Tombol untuk memulai animasi dan musik -->
+    <button class="button" onclick="startCelebration()">Rayakan!</button>
+
+    <!-- Kontainer Balon -->
+    <div id="balloons-container"></div>
+
+    <!-- Audio untuk Lagu Ulang Tahun -->
+    <audio id="birthdaySong" src="/assets/Gellen Martadinata - Selamat Ulang Tahun ( Unofficial Music Video & Lyric ) (mp3cut.net).mp3"></audio>
+</div>
+
+<script>
+function startCelebration() {
+    // Menghilangkan tombol setelah diklik
+    document.querySelector(".button").style.display = "none";
+
+    // Memunculkan balon dengan loop
+    const balloonsContainer = document.getElementById("balloons-container");
+    for (let i = 0; i < 20; i++) { // 20 balon
+        const balloon = document.createElement("div");
+        balloon.className = "balloon";
+        balloon.style.left = `${Math.random() * 100}%`;
+        balloon.style.backgroundColor = getRandomColor();
+        balloonsContainer.appendChild(balloon);
+    }
+
+    // Memutar lagu ulang tahun
+    const birthdaySong = document.getElementById("birthdaySong");
+    birthdaySong.play();
+}
+
+// Fungsi untuk mendapatkan warna acak untuk balon
+function getRandomColor() {
+    const colors = ["#ff6f61", "#ffecb3", "#81c784", "#64b5f6", "#ba68c8"];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+</script>
+</body>
+</html>
